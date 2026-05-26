@@ -75,7 +75,7 @@ Before using the framework, you need:
 - What are you building?
 - Who are the users?
 - What are the success criteria?
-- What's the timeline?
+- What are the key milestones?
 
 **Requirements**:
 - What features do you need?
@@ -201,7 +201,6 @@ Context:
       "assignee": "BACKEND_DEVELOPER",
       "status": "TODO",
       "priority": "HIGH",
-      "estimatedHours": 6,
       "dependencies": [],
       "completionCriteria": ["Criterion 1", "Criterion 2"]
     }
@@ -533,10 +532,10 @@ All agents communicate through:
 
 ## Common Questions
 
-### Q: How long does this take to set up?
+### Q: How do I set up the framework?
 
 **A**: 
-Setup time depends on project complexity. Start with your project brief and requirements, then decompose into tasks.
+Setup depends on project complexity. Start with your project brief and requirements, then decompose into tasks.
 
 ### Q: Can I use this for small projects?
 

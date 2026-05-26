@@ -125,10 +125,10 @@ Team Lead monitors progress:
    - Identify risks
    - Support team
 
-3. **Weekly**:
+3. **Periodic Reviews**:
    - Review overall progress
    - Assess quality
-   - Plan next week
+   - Plan next phase
    - Celebrate milestones
 
 ## Detailed Execution Steps
@@ -620,13 +620,13 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
    - Set expectations
 
 2. **Regular Monitoring**
-   - Check progress every 4 hours
+   - Check progress regularly
    - Identify blockers early
    - Escalate immediately
    - Adjust timeline as needed
 
 3. **Blocker Resolution**
-   - Respond within 1 hour
+   - Respond promptly
    - Identify root cause
    - Coordinate resolution
    - Verify fix
@@ -646,7 +646,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
    - Begin work promptly
 
 2. **Progress Tracking**
-   - Update progress every 2 hours
+   - Update progress regularly
    - Be honest about blockers
    - Communicate challenges
    - Ask for help when needed
