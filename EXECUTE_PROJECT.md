@@ -20,104 +20,96 @@ Before executing, make sure you have:
 
 ---
 
-## ⚙️ Step 0: Configure ~/.claude.json for Team Agents
+## ⚙️ Step 0: Enable Agent Teams in ~/.claude/settings.json
 
-Before you can spawn agents, you need to configure team agents in your `~/.claude.json` file.
+Before you can spawn agents, you need to enable agent teams in your `~/.claude/settings.json` file.
 
-### Enable Team Agents in ~/.claude.json
+### Enable Agent Teams
 
-**Edit your `~/.claude.json` file:**
+**Agent teams are experimental and disabled by default.** Enable them by adding the `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` environment variable to your settings.
+
+**Edit your `~/.claude/settings.json` file:**
 
 1. **Open the file**
    ```bash
    # On macOS/Linux
-   nano ~/.claude.json
+   nano ~/.claude/settings.json
    
    # Or use your preferred editor
-   vim ~/.claude.json
-   code ~/.claude.json
+   vim ~/.claude/settings.json
+   code ~/.claude/settings.json
    ```
 
-2. **Add or update agent settings**
+2. **Add the environment variable**
    
-   Find the section with agent configuration and ensure these settings are present:
+   Add this to your settings.json:
    
    ```json
    {
-     "cachedGrowthBookFeatures": {
-       "tengu_fg_left_arrow_agents": true,
-       "tengu_slim_subagent_claudemd": true
-     },
-     "agentSettings": {
-       "agent_timeout_seconds": 600,
-       "max_concurrent_agents": 5,
-       "enable_agent_logs": true,
-       "enable_team_agents": true
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
      }
    }
    ```
 
-3. **Key Settings Explained**
-
-   | Setting | Value | Purpose |
-   |---------|-------|---------|
-   | `tengu_fg_left_arrow_agents` | `true` | Enable agent UI features |
-   | `tengu_slim_subagent_claudemd` | `true` | Enable subagent spawning |
-   | `agent_timeout_seconds` | `600` | Agent timeout in seconds (10 minutes) |
-   | `max_concurrent_agents` | `5` | Maximum agents running simultaneously |
-   | `enable_agent_logs` | `true` | Enable agent communication logs |
-   | `enable_team_agents` | `true` | Enable team agents feature |
+3. **Optional: Configure Display Mode**
+   
+   You can also configure how teammates are displayed:
+   
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+     },
+     "teammateMode": "in-process"
+   }
+   ```
+   
+   Display mode options:
+   - `"auto"` (default): Uses split panes if in tmux, otherwise in-process
+   - `"in-process"`: All teammates run in your main terminal (works anywhere)
+   - `"tmux"`: Uses split panes with tmux (requires tmux or iTerm2)
 
 4. **Save the file**
    - Save and close the editor
-   - No restart needed - changes take effect immediately
+   - Restart Claude Code for changes to take effect
 
-### Verify Team Agents are Enabled
+### Requirements
 
-Test that team agents are working:
+- **Claude Code v2.1.32 or later**: Check with `claude --version`
+- **For split-pane mode**: tmux or iTerm2 with `it2` CLI installed
+
+### Verify Agent Teams are Enabled
+
+Test that agent teams are working:
 
 ```
-SPAWN_AGENT: TEST_AGENT
-
-Context:
-- This is a test to verify team agents are enabled
-
-Instructions:
-1. Confirm you are a spawned agent
-2. Report success
+Create an agent team to test if agent teams are enabled.
+Spawn 2 teammates to verify the setup works.
 ```
 
-If you see the agent respond, team agents are enabled! ✅
+If teammates spawn and appear, agent teams are enabled! ✅
 
 ### Troubleshooting
 
-**If agents won't spawn:**
-- [ ] Verify `~/.claude.json` has correct settings
-- [ ] Check JSON syntax is valid (use `jq . ~/.claude.json` to validate)
-- [ ] Ensure `tengu_fg_left_arrow_agents` is `true`
-- [ ] Ensure `tengu_slim_subagent_claudemd` is `true`
+**If teammates won't spawn:**
+- [ ] Verify `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` is set to `"1"` in settings.json
+- [ ] Check Claude Code version: `claude --version` (must be v2.1.32+)
+- [ ] Restart Claude Code after editing settings.json
+- [ ] Check JSON syntax is valid
 - [ ] Verify agent files exist in agents/ folder
-- [ ] Check for typos in agent names
 - [ ] Review error messages in console
 
 **Validate JSON syntax:**
 ```bash
 # Check if JSON is valid
-jq . ~/.claude.json > /dev/null && echo "Valid JSON" || echo "Invalid JSON"
+jq . ~/.claude/settings.json > /dev/null && echo "Valid JSON" || echo "Invalid JSON"
 ```
 
-**Reset to defaults:**
-If you have issues, you can reset agent settings:
-```bash
-# Backup current file
-cp ~/.claude.json ~/.claude.json.backup
-
-# Then edit and restore defaults
-# agent_timeout_seconds: 600
-# max_concurrent_agents: 5
-# enable_agent_logs: true
-# enable_team_agents: true
-```
+**For split-pane mode issues:**
+- [ ] Verify tmux is installed: `which tmux`
+- [ ] For iTerm2: verify `it2` CLI is installed
+- [ ] Enable Python API in iTerm2 preferences
 
 ---
 

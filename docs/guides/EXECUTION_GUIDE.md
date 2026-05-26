@@ -9,71 +9,70 @@
 3. **Project Context**: You should have read the project requirements and architecture
 4. **Team Configuration**: You should understand the team structure and roles
 
-### Step 0: Configure ~/.claude.json for Team Agents
+### Step 0: Enable Agent Teams in ~/.claude/settings.json
 
-Before you can spawn agents, configure team agents in your `~/.claude.json` file:
+Before you can spawn agents, enable agent teams in your settings file:
 
-1. **Open ~/.claude.json**
+1. **Open ~/.claude/settings.json**
    ```bash
    # Edit with your preferred editor
-   nano ~/.claude.json
-   vim ~/.claude.json
-   code ~/.claude.json
+   nano ~/.claude/settings.json
+   vim ~/.claude/settings.json
+   code ~/.claude/settings.json
    ```
 
-2. **Add Agent Configuration**
+2. **Add Environment Variable**
    
-   Ensure these settings are present in your `~/.claude.json`:
+   Add this to your `~/.claude/settings.json`:
    
    ```json
    {
-     "cachedGrowthBookFeatures": {
-       "tengu_fg_left_arrow_agents": true,
-       "tengu_slim_subagent_claudemd": true
-     },
-     "agentSettings": {
-       "agent_timeout_seconds": 600,
-       "max_concurrent_agents": 5,
-       "enable_agent_logs": true,
-       "enable_team_agents": true
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
      }
    }
    ```
 
-3. **Configuration Details**
+3. **Optional: Configure Display Mode**
    
-   | Setting | Value | Purpose |
-   |---------|-------|---------|
-   | `tengu_fg_left_arrow_agents` | `true` | Enable agent UI features |
-   | `tengu_slim_subagent_claudemd` | `true` | Enable subagent spawning |
-   | `agent_timeout_seconds` | `600` | Agent timeout (10 minutes) |
-   | `max_concurrent_agents` | `5` | Max simultaneous agents |
-   | `enable_agent_logs` | `true` | Enable communication logs |
-   | `enable_team_agents` | `true` | Enable team agents |
+   You can configure how teammates are displayed:
+   
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+     },
+     "teammateMode": "in-process"
+   }
+   ```
+   
+   | Mode | Description |
+   |------|-------------|
+   | `"auto"` | Uses split panes if in tmux, otherwise in-process (default) |
+   | `"in-process"` | All teammates in main terminal (works anywhere) |
+   | `"tmux"` | Split panes with tmux (requires tmux or iTerm2) |
 
 4. **Save the File**
    - Save and close editor
-   - Changes take effect immediately
+   - Restart Claude Code for changes to take effect
 
-5. **Verify Configuration**
+5. **Requirements**
+   - Claude Code v2.1.32 or later: `claude --version`
+   - For split-pane mode: tmux or iTerm2 with `it2` CLI
+
+6. **Verify Configuration**
    ```bash
    # Validate JSON syntax
-   jq . ~/.claude.json > /dev/null && echo "Valid" || echo "Invalid"
+   jq . ~/.claude/settings.json > /dev/null && echo "Valid" || echo "Invalid"
    ```
 
-6. **Test Team Agents**
+7. **Test Agent Teams**
    ```
-   SPAWN_AGENT: TEST_AGENT
-   
-   Context:
-   - This is a test to verify team agents are enabled
-   
-   Instructions:
-   1. Confirm you are a spawned agent
-   2. Report success
+   Create an agent team to test if agent teams are enabled.
+   Spawn 2 teammates to verify the setup works.
    ```
    
-   If the agent responds, team agents are enabled! ✅
+   If teammates spawn, agent teams are enabled! ✅
 
 ### Step 1: Prepare Project Context
 

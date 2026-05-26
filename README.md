@@ -117,38 +117,41 @@ START
 
 ## 🚀 Quick Start - 10 Execution Phases
 
-### Phase 0: Configure ~/.claude.json for Team Agents
+### Phase 0: Enable Agent Teams in ~/.claude/settings.json
 
-Before you can spawn agents, configure team agents in your `~/.claude.json` file:
+Before you can spawn agents, enable agent teams in your settings:
 
-1. **Edit ~/.claude.json**
+1. **Edit ~/.claude/settings.json**
    ```bash
-   nano ~/.claude.json
+   nano ~/.claude/settings.json
    ```
 
-2. **Add Agent Settings**
+2. **Add Environment Variable**
    ```json
    {
-     "cachedGrowthBookFeatures": {
-       "tengu_fg_left_arrow_agents": true,
-       "tengu_slim_subagent_claudemd": true
-     },
-     "agentSettings": {
-       "agent_timeout_seconds": 600,
-       "max_concurrent_agents": 5,
-       "enable_agent_logs": true,
-       "enable_team_agents": true
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
      }
    }
    ```
 
-3. **Save the File**
-   - Save and close editor
-   - Changes take effect immediately
+3. **Optional: Configure Display Mode**
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+     },
+     "teammateMode": "in-process"
+   }
+   ```
 
-4. **Verify**
-   - Test with: `SPAWN_AGENT: TEST_AGENT`
-   - Confirm agent responds
+4. **Restart Claude Code**
+   - Save and close editor
+   - Restart Claude Code for changes to take effect
+
+5. **Verify**
+   - Test by creating an agent team
+   - Confirm teammates spawn
 
 ### Phase 1: Prepare Project Files
 Create three files:
