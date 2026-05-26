@@ -14,13 +14,98 @@ Before executing, make sure you have:
 - ✅ **REQUIREMENTS.md** - What features do you need?
 - ✅ **TASK_LIST.md** - What tasks need to be done? (use the simple format)
 - ✅ **Project folder organized** - With agents/ and shared/ folders
+- ✅ **Agent files copied** - From the framework repo to your project
 - ✅ **Access to Claude Code** - To spawn agents
+
+---
+
+## 📁 Step 0: Copy Framework Files to Your Project
+
+Before you can execute agents, you need to copy the necessary files from the framework repository to your project directory.
+
+### Option A: Copy Individual Files (Recommended for New Projects)
+
+```bash
+# Create your project directory structure
+mkdir -p your-project/agents
+mkdir -p your-project/shared
+mkdir -p your-project/docs
+
+# Copy agent files from the framework repo
+cp /path/to/framework/agents/team-lead-agent.md your-project/agents/
+cp /path/to/framework/agents/backend-agent.md your-project/agents/
+cp /path/to/framework/agents/frontend-agent.md your-project/agents/
+cp /path/to/framework/agents/qa-agent.md your-project/agents/
+cp /path/to/framework/agents/devops-agent.md your-project/agents/
+cp /path/to/framework/agents/docs-agent.md your-project/agents/
+cp /path/to/framework/agents/agent-framework.js your-project/agents/
+
+# Copy documentation files
+cp /path/to/framework/README.md your-project/
+cp /path/to/framework/TASK_LIST_TEMPLATE.md your-project/
+cp /path/to/framework/docs/guides/EXECUTION_GUIDE.md your-project/docs/
+cp /path/to/framework/docs/guides/DEMO_GUIDE.md your-project/docs/
+```
+
+### Option B: Clone the Entire Framework (For Reference)
+
+```bash
+# Clone the framework repository
+git clone https://github.com/lloydgam/sdlc-agent-team-framework.git your-project
+
+# This gives you everything including documentation and examples
+```
+
+### Your Project Structure After Copying
+
+```
+your-project/
+├── PROJECT_BRIEF.md          ← Create this (what are you building?)
+├── REQUIREMENTS.md           ← Create this (what features do you need?)
+├── TASK_LIST.md              ← Create this (use TASK_LIST_TEMPLATE.md as reference)
+├── README.md                 ← Copied from framework
+├── TASK_LIST_TEMPLATE.md     ← Copied from framework (reference)
+├── EXECUTE_PROJECT.md        ← Copied from framework (this file)
+│
+├── agents/                   ← Copied from framework
+│   ├── team-lead-agent.md
+│   ├── backend-agent.md
+│   ├── frontend-agent.md
+│   ├── qa-agent.md
+│   ├── devops-agent.md
+│   ├── docs-agent.md
+│   └── agent-framework.js
+│
+├── shared/                   ← Created by agents during execution
+│   ├── task-list.json
+│   └── communication-log.json
+│
+└── docs/                     ← Copied from framework (reference)
+    ├── EXECUTION_GUIDE.md
+    └── DEMO_GUIDE.md
+```
+
+### What Each File Does
+
+| File | Source | Purpose |
+|------|--------|---------|
+| PROJECT_BRIEF.md | You create | Define what you're building |
+| REQUIREMENTS.md | You create | List features and constraints |
+| TASK_LIST.md | You create (use template) | Break work into tasks |
+| agents/*.md | Copy from framework | Agent role definitions and logic |
+| agent-framework.js | Copy from framework | Shared utilities for agents |
+| shared/task-list.json | Auto-created | Central task coordination |
+| shared/communication-log.json | Auto-created | Agent communication tracking |
 
 ---
 
 ## 🚀 One-Command Execution
 
-### Step 1: Copy This Command
+### Step 1: Verify Files Are Copied
+
+Make sure you've completed **Step 0** above and have all agent files in your project's `agents/` directory.
+
+### Step 2: Copy This Command
 
 Copy the entire command below and paste it into Claude Code:
 
@@ -63,11 +148,11 @@ Task: Claim documentation tasks and execute
 6. Report status when all agents are spawned
 ```
 
-### Step 2: Paste in Claude Code
+### Step 3: Paste in Claude Code
 
 Paste the command into Claude Code and press Enter.
 
-### Step 3: Wait for Execution
+### Step 4: Wait for Execution
 
 The Team Lead Agent will:
 1. ✅ Analyze your project
