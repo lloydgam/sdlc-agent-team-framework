@@ -21,7 +21,7 @@ Think of it as having a **Team Lead orchestrator** who manages 5 specialized age
 
 ---
 
-## Quick Demo (5 minutes)
+## Quick Demo
 
 ### The Architecture
 
@@ -65,9 +65,9 @@ Think of it as having a **Team Lead orchestrator** who manages 5 specialized age
 
 ---
 
-## Getting Started (30 minutes)
+## Getting Started
 
-### Step 1: Understand Your Project (10 min)
+### Step 1: Understand Your Project
 
 Before using the framework, you need:
 
@@ -89,7 +89,7 @@ Before using the framework, you need:
 - How do they interact?
 - What are the data flows?
 
-### Step 2: Prepare Your Task List (15 min)
+### Step 2: Prepare Your Task List
 
 Break your project into tasks:
 
@@ -99,7 +99,6 @@ Break your project into tasks:
 - Description (what needs to be done)
 - Assignee (which agent)
 - Dependencies (what tasks must be done first)
-- Estimated hours (4-8 hours each)
 - Completion criteria (how do you know it's done?)
 
 **Example**:
@@ -110,7 +109,6 @@ Break your project into tasks:
   "description": "Design comprehensive API specification",
   "assignee": "BACKEND_DEVELOPER",
   "dependencies": [],
-  "estimatedHours": 6,
   "completionCriteria": [
     "API endpoints defined",
     "Request/response schemas documented",
@@ -119,7 +117,7 @@ Break your project into tasks:
 }
 ```
 
-### Step 3: Spawn Team Lead Agent (5 min)
+### Step 3: Spawn Team Lead Agent
 
 In Claude Code, run:
 
@@ -142,9 +140,9 @@ Context:
 
 ---
 
-## Full Demo Walkthrough (1 hour)
+## Full Demo Walkthrough
 
-### Phase 1: Project Setup (15 minutes)
+### Phase 1: Project Setup
 
 #### Create Your Project Files
 
@@ -165,8 +163,8 @@ Context:
 - Criterion 2
 - Criterion 3
 
-## Timeline
-[How long do you have?]
+## Scope
+[What's the scope of work?]
 
 ## Team
 [Who's involved?]
@@ -231,7 +229,7 @@ your-project/
     └── communication-log.json
 ```
 
-### Phase 2: Spawn Team Lead (15 minutes)
+### Phase 2: Spawn Team Lead
 
 **In Claude Code**:
 
@@ -258,7 +256,7 @@ Context:
 - Team Lead identifies critical path
 - Team Lead prepares for agent spawning
 
-### Phase 3: Spawn Specialized Agents (15 minutes)
+### Phase 3: Spawn Specialized Agents
 
 Once Team Lead is ready, spawn the specialized agents:
 
@@ -283,13 +281,13 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 - Each agent begins work
 - Task list updates with progress
 
-### Phase 4: Monitor Progress (15 minutes)
+### Phase 4: Monitor Progress
 
 **Team Lead monitors**:
-- Every 4 hours: Check task list for updates
+- Check task list for updates regularly
 - Identify blockers
 - Escalate issues
-- Adjust timeline if needed
+- Adjust priorities if needed
 
 **You monitor**:
 - Check `shared/task-list.json` for progress
@@ -317,7 +315,7 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 Build a modern e-commerce platform with product catalog, shopping cart, and checkout.
 
 ## Goals
-- Launch MVP in 6 weeks
+- Build a complete e-commerce platform
 - Support 1,000 concurrent users
 - Achieve 99.9% uptime
 
@@ -354,28 +352,24 @@ Build a modern e-commerce platform with product catalog, shopping cart, and chec
       "id": "TASK-001",
       "title": "API Specification & Design",
       "assignee": "BACKEND_DEVELOPER",
-      "estimatedHours": 6,
       "dependencies": []
     },
     {
       "id": "TASK-002",
       "title": "Database Schema Design",
       "assignee": "BACKEND_DEVELOPER",
-      "estimatedHours": 4,
       "dependencies": []
     },
     {
       "id": "TASK-003",
       "title": "Authentication & Authorization",
       "assignee": "BACKEND_DEVELOPER",
-      "estimatedHours": 6,
       "dependencies": ["TASK-002"]
     },
     {
       "id": "TASK-011",
       "title": "Project Setup & Component Architecture",
       "assignee": "FRONTEND_DEVELOPER",
-      "estimatedHours": 6,
       "dependencies": []
     }
   ]
@@ -384,41 +378,41 @@ Build a modern e-commerce platform with product catalog, shopping cart, and chec
 
 ### Execution
 
-**Day 1: Team Lead Analysis**
+**Phase 1: Team Lead Analysis**
 - Team Lead analyzes requirements
-- Team Lead decomposes into 38 tasks
+- Team Lead decomposes into tasks
 - Team Lead identifies dependencies
 - Team Lead creates task list
 
-**Day 1: Agent Spawning**
+**Phase 2: Agent Spawning**
 - Spawn Backend Developer
 - Spawn Frontend Developer
 - Spawn QA Engineer
 - Spawn DevOps Engineer
 - Spawn Documentation Agent
 
-**Days 2-17: Core Development**
+**Phase 3: Core Development**
 - Backend: API design, database, authentication, payment
 - Frontend: Components, pages, state management
 - QA: Test strategy, test automation setup
 - DevOps: Infrastructure, CI/CD pipeline
 - Docs: Documentation setup
 
-**Days 18-24: Testing & Integration**
+**Phase 4: Testing & Integration**
 - QA: Execute tests, identify issues
 - Backend/Frontend: Fix issues, integrate
 - DevOps: Deploy to staging
 
-**Days 25-31: Optimization & Refinement**
+**Phase 5: Optimization & Refinement**
 - All: Performance optimization, security hardening
 - QA: Final testing
 - Docs: Complete documentation
 
-**Days 32-34: Deployment**
+**Phase 6: Deployment**
 - DevOps: Deploy to production
 - All: Support launch
 
-**Days 35-42: Post-Launch**
+**Phase 7: Post-Launch**
 - All: Monitor, fix issues, document lessons
 
 ---
@@ -430,7 +424,7 @@ Build a modern e-commerce platform with product catalog, shopping cart, and chec
 1. **Create project brief** (what are you building?)
 2. **Define requirements** (what features do you need?)
 3. **Design architecture** (how will it be built?)
-4. **Decompose tasks** (break into 4-8 hour chunks)
+4. **Decompose tasks** (break into manageable chunks)
 5. **Spawn Team Lead** (orchestrate the project)
 6. **Spawn agents** (execute the work)
 7. **Monitor progress** (track and support)
@@ -439,7 +433,7 @@ Build a modern e-commerce platform with product catalog, shopping cart, and chec
 
 1. **Document current state** (what's done, what's left?)
 2. **Define remaining work** (what needs to be done?)
-3. **Decompose tasks** (break into 4-8 hour chunks)
+3. **Decompose tasks** (break into manageable chunks)
 4. **Spawn Team Lead** (coordinate remaining work)
 5. **Spawn agents** (execute remaining tasks)
 6. **Monitor progress** (track and support)
@@ -514,15 +508,15 @@ All agents communicate through:
 ✅ **Clear task descriptions** - Be specific about what needs to be done
 ✅ **Define completion criteria** - How do you know it's done?
 ✅ **Identify dependencies** - What tasks depend on others?
-✅ **Monitor regularly** - Check progress every 4 hours
-✅ **Resolve blockers quickly** - Respond within 1 hour
+✅ **Monitor regularly** - Check progress consistently
+✅ **Resolve blockers quickly** - Respond promptly
 ✅ **Support your team** - Provide guidance and remove obstacles
 
 ### For All Agents
 
 ✅ **Check task list regularly** - See what's available
 ✅ **Claim tasks promptly** - Take ownership
-✅ **Update progress regularly** - Every 2 hours
+✅ **Update progress regularly** - Keep task list current
 ✅ **Report blockers immediately** - Don't wait
 ✅ **Communicate clearly** - Be specific and helpful
 ✅ **Complete tasks thoroughly** - Verify completion criteria
@@ -542,9 +536,7 @@ All agents communicate through:
 ### Q: How long does this take to set up?
 
 **A**: 
-- Quick start: 30 minutes
-- Full setup: 2-3 hours
-- Depends on project complexity
+Setup time depends on project complexity. Start with your project brief and requirements, then decompose into tasks.
 
 ### Q: Can I use this for small projects?
 
@@ -565,26 +557,25 @@ You can use a subset of agents. For example:
 1. Document the change
 2. Create new tasks if needed
 3. Escalate to Team Lead
-4. Team Lead adjusts timeline
+4. Team Lead adjusts priorities
 5. Continue work
 
-### Q: What if a task takes longer than estimated?
+### Q: What if a task takes longer than expected?
 
 **A**: 
-1. Update the estimate
-2. Report to Team Lead
-3. Identify blockers
-4. Adjust timeline if needed
-5. Continue work
+1. Report to Team Lead
+2. Identify blockers
+3. Adjust priorities if needed
+4. Continue work
 
 ### Q: How do I know if we're on track?
 
 **A**: 
 Check these metrics:
-- **Velocity**: Tasks completed per day
 - **Progress**: % of tasks complete
-- **Blockers**: Number and age of blockers
-- **Timeline**: Days remaining vs. tasks remaining
+- **Blockers**: Number and status of blockers
+- **Quality**: Test coverage and defect count
+- **Velocity**: Tasks completed
 
 ---
 

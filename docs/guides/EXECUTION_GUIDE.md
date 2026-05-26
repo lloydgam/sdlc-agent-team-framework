@@ -9,7 +9,7 @@
 3. **Project Context**: You should have read the project requirements and architecture
 4. **Team Configuration**: You should understand the team structure and roles
 
-### Step 1: Prepare Project Context (30 minutes)
+### Step 1: Prepare Project Context
 
 Before spawning agents, prepare your project:
 
@@ -34,18 +34,18 @@ Before spawning agents, prepare your project:
 4. **Create Team Configuration**
    - Define team structure
    - Assign roles
-   - Set timeline
    - Define quality gates
+   - Plan resource allocation
 
-### Step 2: Prepare Task List (1 hour)
+### Step 2: Prepare Task List
 
 Create a comprehensive task list:
 
 1. **Decompose Work**
    - Break features into tasks
-   - Estimate effort (4-8 hours each)
    - Identify dependencies
    - Assign to agents
+   - Prioritize work
 
 2. **Define Completion Criteria**
    - What does "done" mean?
@@ -65,7 +65,7 @@ Create a comprehensive task list:
    - What is most complex?
    - What should be done first?
 
-### Step 3: Spawn Team Lead Agent (30 minutes)
+### Step 3: Spawn Team Lead Agent
 
 The Team Lead Agent orchestrates the entire project:
 
@@ -90,7 +90,7 @@ Context:
 6. Monitor progress
 7. Resolve blockers
 
-### Step 4: Spawn Specialized Agents (1 hour)
+### Step 4: Spawn Specialized Agents
 
 Once Team Lead is ready, spawn specialized agents:
 
@@ -113,20 +113,20 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 
 Team Lead monitors progress:
 
-1. **Every 4 Hours**:
+1. **Regularly**:
    - Check task list for updates
    - Identify blockers
    - Verify progress
-   - Adjust timeline if needed
+   - Adjust priorities if needed
 
 2. **Daily**:
    - Review completed tasks
-   - Check velocity
+   - Check progress
    - Identify risks
    - Support team
 
 3. **Weekly**:
-   - Review progress against timeline
+   - Review overall progress
    - Assess quality
    - Plan next week
    - Celebrate milestones
@@ -135,7 +135,7 @@ Team Lead monitors progress:
 
 ### For Team Lead Agent
 
-#### Phase 1: Project Analysis (Day 1)
+#### Phase 1: Project Analysis
 
 **Step 1: Review Requirements**
 ```
@@ -157,7 +157,7 @@ Team Lead monitors progress:
 
 **Step 3: Decompose Tasks**
 ```
-1. Break features into tasks (4-8 hours each)
+1. Break features into manageable tasks
 2. Identify dependencies
 3. Map critical path
 4. Assign to agents
@@ -173,7 +173,7 @@ Team Lead monitors progress:
 5. Save to shared/task-list.json
 ```
 
-#### Phase 2: Team Spawning (Day 1)
+#### Phase 2: Team Spawning
 
 **Step 1: Spawn Sub-Agents**
 ```
@@ -193,9 +193,9 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 5. Set expectations
 ```
 
-#### Phase 3: Execution Monitoring (Days 2+)
+#### Phase 3: Execution Monitoring
 
-**Step 1: Monitor Progress (Every 4 Hours)**
+**Step 1: Monitor Progress**
 ```
 1. Load shared/task-list.json
 2. Check for task updates
@@ -235,7 +235,7 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 
 #### Daily Workflow
 
-**Morning (Start of Day)**
+**Start of Work Session**
 ```
 1. Check shared/task-list.json
 2. Find TODO tasks assigned to BACKEND_DEVELOPER
@@ -244,21 +244,21 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 5. Update status to IN_PROGRESS
 ```
 
-**Throughout Day**
+**During Work Session**
 ```
 1. Execute assigned task
-2. Update progress every 2 hours
+2. Update progress regularly
 3. Report blockers immediately
 4. Communicate with other agents
 5. Document work
 ```
 
-**End of Day**
+**End of Work Session**
 ```
 1. Complete task if finished
 2. Update task list with final status
 3. Document completion notes
-4. Prepare for next day
+4. Prepare for next session
 5. Commit code changes
 ```
 
@@ -285,7 +285,7 @@ const result = framework.claimTask('TASK-001', 'BACKEND_DEVELOPER');
 **Step 3: Update Progress**
 ```javascript
 framework.updateTaskProgress('TASK-001', 50, 'Halfway done, working on schemas');
-// Every 2 hours
+// Regularly
 ```
 
 **Step 4: Report Blockers**
@@ -306,7 +306,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 #### Daily Workflow
 
-**Morning (Start of Day)**
+**Start of Work Session**
 ```
 1. Check shared/task-list.json
 2. Find TODO tasks assigned to FRONTEND_DEVELOPER
@@ -315,21 +315,21 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 5. Update status to IN_PROGRESS
 ```
 
-**Throughout Day**
+**During Work Session**
 ```
 1. Execute assigned task
-2. Update progress every 2 hours
+2. Update progress regularly
 3. Report blockers immediately
 4. Communicate with Backend Agent on API contracts
 5. Document work
 ```
 
-**End of Day**
+**End of Work Session**
 ```
 1. Complete task if finished
 2. Update task list with final status
 3. Document completion notes
-4. Prepare for next day
+4. Prepare for next session
 5. Commit code changes
 ```
 
@@ -337,7 +337,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 #### Daily Workflow
 
-**Morning (Start of Day)**
+**Start of Work Session**
 ```
 1. Check shared/task-list.json
 2. Find TODO tasks assigned to QA_ENGINEER
@@ -346,21 +346,21 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 5. Update status to IN_PROGRESS
 ```
 
-**Throughout Day**
+**During Work Session**
 ```
 1. Execute assigned task
-2. Update progress every 2 hours
+2. Update progress regularly
 3. Report blockers immediately
 4. Communicate with development agents
 5. Document test results
 ```
 
-**End of Day**
+**End of Work Session**
 ```
 1. Complete task if finished
 2. Update task list with final status
 3. Document completion notes
-4. Prepare for next day
+4. Prepare for next session
 5. Commit test code
 ```
 
@@ -368,7 +368,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 #### Daily Workflow
 
-**Morning (Start of Day)**
+**Start of Work Session**
 ```
 1. Check shared/task-list.json
 2. Find TODO tasks assigned to DEVOPS_ENGINEER
@@ -377,21 +377,21 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 5. Update status to IN_PROGRESS
 ```
 
-**Throughout Day**
+**During Work Session**
 ```
 1. Execute assigned task
-2. Update progress every 2 hours
+2. Update progress regularly
 3. Report blockers immediately
 4. Communicate with all agents on infrastructure
 5. Document infrastructure changes
 ```
 
-**End of Day**
+**End of Work Session**
 ```
 1. Complete task if finished
 2. Update task list with final status
 3. Document completion notes
-4. Prepare for next day
+4. Prepare for next session
 5. Commit infrastructure code
 ```
 
@@ -399,7 +399,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 #### Daily Workflow
 
-**Morning (Start of Day)**
+**Start of Work Session**
 ```
 1. Check shared/task-list.json
 2. Find TODO tasks assigned to DOCUMENTATION_SPECIALIST
@@ -408,21 +408,21 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 5. Update status to IN_PROGRESS
 ```
 
-**Throughout Day**
+**During Work Session**
 ```
 1. Execute assigned task
-2. Update progress every 2 hours
+2. Update progress regularly
 3. Report blockers immediately
 4. Communicate with all agents on documentation
 5. Document findings
 ```
 
-**End of Day**
+**End of Work Session**
 ```
 1. Complete task if finished
 2. Update task list with final status
 3. Document completion notes
-4. Prepare for next day
+4. Prepare for next session
 5. Commit documentation
 ```
 
@@ -430,7 +430,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 ### Task List Updates
 
-**Frequency**: Every 2 hours (agents), every 4 hours (Team Lead)
+**Frequency**: Regular updates from agents, consistent monitoring by Team Lead
 
 **Format**: JSON task list with status updates
 
@@ -444,7 +444,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 **Daily Standup**: Via task list updates (async)
 
-**Weekly Review**: Team Lead reviews progress
+**Periodic Review**: Team Lead reviews progress
 
 **Blocker Escalation**: Immediate
 
@@ -522,8 +522,8 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 ### Key Metrics to Track
 
 **Velocity**:
-- Tasks completed per day
-- Actual vs. estimated hours
+- Tasks completed
+- Progress rate
 - Trend analysis
 
 **Quality**:
@@ -532,7 +532,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 - Critical/high bugs
 
 **Timeline**:
-- Days remaining
+- Remaining work
 - Tasks on track
 - Critical path status
 
@@ -543,7 +543,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 
 ### Monitoring Checklist
 
-**Every 4 Hours**:
+**Regularly**:
 - [ ] Check task list for updates
 - [ ] Verify progress
 - [ ] Identify blockers
@@ -559,7 +559,7 @@ framework.completeTask('TASK-001', 'BACKEND_DEVELOPER', 'API specification compl
 **Weekly**:
 - [ ] Review progress against timeline
 - [ ] Assess quality
-- [ ] Plan next week
+- [ ] Plan next period
 - [ ] Celebrate milestones
 - [ ] Adjust timeline if needed
 
