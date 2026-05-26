@@ -4,10 +4,39 @@
 
 ### Prerequisites
 
-1. **Claude Code Access**: You need access to Claude Code with agent spawning capabilities
+1. **Claude Code with Team Agents Enabled**: You need Claude Code with team agents enabled in settings
 2. **Project Files**: All agent files and shared resources must be in place
 3. **Project Context**: You should have read the project requirements and architecture
 4. **Team Configuration**: You should understand the team structure and roles
+
+### Step 0: Enable Team Agents in Claude Code
+
+Before you can spawn agents, enable team agents:
+
+1. **Open Claude Code Settings**
+   - Click gear icon (⚙️) in top right
+   - Select "Settings"
+
+2. **Find Agent Settings**
+   - Look for "Agent" or "Team Agents" section
+   - Find "Enable Team Agents" option
+
+3. **Enable Team Agents**
+   - Toggle "Enable Team Agents" to ON
+   - This allows you to spawn multiple agents
+
+4. **Configure (Optional)**
+   - Set agent timeout (default: 5 minutes)
+   - Set max concurrent agents (default: 5)
+   - Enable communication logs (recommended: ON)
+
+5. **Save Settings**
+   - Click "Save" or "Apply"
+   - Verify settings are saved
+
+6. **Verify Team Agents Work**
+   - Test with: `SPAWN_AGENT: TEST_AGENT`
+   - Confirm agent responds
 
 ### Step 1: Prepare Project Context
 
@@ -65,7 +94,21 @@ Create a comprehensive task list:
    - What is most complex?
    - What should be done first?
 
-### Step 3: Spawn Team Lead Agent
+### Step 3: Copy Framework Files
+
+Copy agent files from the framework repository to your project:
+
+```bash
+# Copy agent files
+cp /path/to/framework/agents/*.md your-project/agents/
+cp /path/to/framework/agents/agent-framework.js your-project/agents/
+
+# Copy documentation
+cp /path/to/framework/README.md your-project/
+cp /path/to/framework/TASK_LIST_TEMPLATE.md your-project/
+```
+
+### Step 4: Spawn Team Lead Agent
 
 The Team Lead Agent orchestrates the entire project:
 
@@ -75,10 +118,8 @@ SPAWN_AGENT: TEAM_LEAD
 Context:
 - Read PROJECT_BRIEF.md
 - Read REQUIREMENTS.md
-- Read ARCHITECTURE.md
-- Review TEAM_CONFIG.json
-- Review TASK_LIST.json
-- Use agent-framework.js for task management
+- Review TASK_LIST.md
+- Use agents/agent-framework.js for task management
 ```
 
 **Team Lead Responsibilities**:
@@ -90,7 +131,7 @@ Context:
 6. Monitor progress
 7. Resolve blockers
 
-### Step 4: Spawn Specialized Agents
+### Step 5: Spawn Specialized Agents
 
 Once Team Lead is ready, spawn specialized agents:
 
@@ -109,7 +150,7 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 4. Claims available tasks
 5. Begins work
 
-### Step 5: Monitor Progress (Ongoing)
+### Step 6: Monitor Progress (Ongoing)
 
 Team Lead monitors progress:
 

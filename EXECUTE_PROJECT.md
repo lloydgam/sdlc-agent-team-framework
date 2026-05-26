@@ -10,6 +10,7 @@ Once your project details are ready (brief, requirements, task list), use this g
 
 Before executing, make sure you have:
 
+- ✅ **Claude Code with Team Agents enabled** - Configure settings first
 - ✅ **PROJECT_BRIEF.md** - What are you building?
 - ✅ **REQUIREMENTS.md** - What features do you need?
 - ✅ **TASK_LIST.md** - What tasks need to be done? (use the simple format)
@@ -19,7 +20,71 @@ Before executing, make sure you have:
 
 ---
 
-## 📁 Step 0: Copy Framework Files to Your Project
+## ⚙️ Step 0: Configure Claude Code Team Agents Settings
+
+Before you can spawn agents, you need to enable team agents in Claude Code settings.
+
+### Enable Team Agents in Claude Code
+
+**In Claude Code:**
+
+1. **Open Settings**
+   - Click the gear icon (⚙️) in the top right
+   - Select "Settings"
+
+2. **Navigate to Agent Settings**
+   - Look for "Agent" or "Team Agents" section
+   - Find "Enable Team Agents" option
+
+3. **Enable Team Agents**
+   - Toggle "Enable Team Agents" to ON
+   - This allows you to spawn multiple agents
+
+4. **Configure Agent Settings** (Optional)
+   - Set agent timeout (default: 5 minutes)
+   - Set max concurrent agents (default: 5)
+   - Enable agent communication logs (recommended: ON)
+
+5. **Save Settings**
+   - Click "Save" or "Apply"
+   - Verify settings are saved
+
+### Verify Team Agents are Enabled
+
+Test that team agents are working:
+
+```
+SPAWN_AGENT: TEST_AGENT
+
+Context:
+- This is a test to verify team agents are enabled
+
+Instructions:
+1. Confirm you are a spawned agent
+2. Report success
+```
+
+If you see the agent respond, team agents are enabled! ✅
+
+### Troubleshooting
+
+**If team agents won't enable:**
+- [ ] Check Claude Code version (must be latest)
+- [ ] Restart Claude Code
+- [ ] Check internet connection
+- [ ] Clear browser cache
+- [ ] Try incognito/private mode
+
+**If agents won't spawn:**
+- [ ] Verify team agents are enabled in settings
+- [ ] Check agent syntax (SPAWN_AGENT: AGENT_NAME)
+- [ ] Verify agent files exist in agents/ folder
+- [ ] Check for typos in agent names
+- [ ] Review error messages in console
+
+---
+
+## 📁 Step 1: Copy Framework Files to Your Project
 
 Before you can execute agents, you need to copy the necessary files from the framework repository to your project directory.
 
@@ -101,11 +166,11 @@ your-project/
 
 ## 🚀 One-Command Execution
 
-### Step 1: Verify Files Are Copied
+### Step 2: Verify Files Are Copied
 
-Make sure you've completed **Step 0** above and have all agent files in your project's `agents/` directory.
+Make sure you've completed **Step 1** above and have all agent files in your project's `agents/` directory.
 
-### Step 2: Copy This Command
+### Step 3: Copy This Command
 
 Copy the entire command below and paste it into Claude Code:
 
@@ -148,11 +213,11 @@ Task: Claim documentation tasks and execute
 6. Report status when all agents are spawned
 ```
 
-### Step 3: Paste in Claude Code
+### Step 4: Paste in Claude Code
 
 Paste the command into Claude Code and press Enter.
 
-### Step 4: Wait for Execution
+### Step 5: Wait for Execution
 
 The Team Lead Agent will:
 1. ✅ Analyze your project

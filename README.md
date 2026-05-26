@@ -115,15 +115,45 @@ START
 
 ---
 
-## 🚀 Quick Start - 9 Execution Phases
+## 🚀 Quick Start - 10 Execution Phases
+
+### Phase 0: Configure Claude Code Settings
+
+Before you can spawn agents, enable team agents in Claude Code:
+
+1. **Open Claude Code Settings**
+   - Click gear icon (⚙️) in top right
+   - Select "Settings"
+
+2. **Enable Team Agents**
+   - Find "Agent" or "Team Agents" section
+   - Toggle "Enable Team Agents" to ON
+
+3. **Configure (Optional)**
+   - Set agent timeout (default: 5 minutes)
+   - Set max concurrent agents (default: 5)
+   - Enable communication logs (recommended)
+
+4. **Save Settings**
+   - Click "Save" or "Apply"
+
+5. **Verify**
+   - Test with a simple SPAWN_AGENT command
+   - Confirm agent responds
 
 ### Phase 1: Prepare Project Files
 Create three files:
 - **PROJECT_BRIEF.md** - What are you building? (overview, goals, success criteria, scope)
 - **REQUIREMENTS.md** - What features do you need? (functional, non-functional, constraints)
-- **TASK_LIST.json** - What tasks need to be done? (task ID, title, assignee, dependencies, criteria)
+- **TASK_LIST.md** - What tasks need to be done? (use simple Markdown format)
 
-### Phase 2: Organize Project Folder
+### Phase 2: Copy Framework Files
+Copy agent files from the framework repository to your project:
+- Copy `agents/` folder with all agent files
+- Copy `shared/` folder for task coordination
+- Copy documentation files for reference
+
+### Phase 3: Organize Project Folder
 ```
 your-project/
 ├── PROJECT_BRIEF.md
@@ -142,14 +172,14 @@ your-project/
     └── communication-log.json
 ```
 
-### Phase 3: Spawn Team Lead Agent
+### Phase 4: Spawn Team Lead Agent
 ```
 SPAWN_AGENT: TEAM_LEAD
 
 Context:
 - Read PROJECT_BRIEF.md
 - Read REQUIREMENTS.md
-- Review TASK_LIST.json
+- Review TASK_LIST.md
 - Use agents/agent-framework.js
 
 Instructions:
@@ -160,7 +190,7 @@ Instructions:
 5. Prepare to spawn agents
 ```
 
-### Phase 4: Spawn Specialized Agents
+### Phase 5: Spawn Specialized Agents
 ```
 SPAWN_AGENT: BACKEND_DEVELOPER
 SPAWN_AGENT: FRONTEND_DEVELOPER
@@ -169,34 +199,34 @@ SPAWN_AGENT: DEVOPS_ENGINEER
 SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 ```
 
-### Phase 5: Parallel Execution
+### Phase 6: Parallel Execution
 - All agents work simultaneously
 - Each claims tasks from shared list
 - Each executes their domain work
 - Each updates progress regularly
 - Each reports blockers immediately
 
-### Phase 6: Team Lead Monitoring
+### Phase 7: Team Lead Monitoring
 - Check task list regularly
 - Identify blockers
 - Escalate issues
 - Adjust priorities
 - Support team
 
-### Phase 7: Blocker Resolution
+### Phase 8: Blocker Resolution
 1. Agent reports blocker
 2. Team Lead investigates
 3. Team Lead coordinates fix
 4. Blocker resolved
 5. Agent resumes work
 
-### Phase 8: Quality Assurance
+### Phase 9: Quality Assurance
 - QA validates work
 - Issues identified
 - Development team fixes
 - QA verifies fixes
 
-### Phase 9: Deployment & Completion
+### Phase 10: Deployment & Completion
 - All tasks marked DONE
 - Quality gates passed
 - Deploy to production
