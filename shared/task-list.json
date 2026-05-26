@@ -1,0 +1,818 @@
+{
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "API Specification & Design",
+      "description": "Design comprehensive API specification for the e-commerce platform",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": [],
+      "completionCriteria": [
+        "API specification document complete",
+        "All endpoints defined with request/response schemas",
+        "Error handling strategy documented",
+        "Authentication flow documented",
+        "Frontend Agent has reviewed and approved"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-002",
+      "title": "Database Schema Design & Setup",
+      "description": "Design and implement database schema for e-commerce platform",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 4,
+      "dependencies": [],
+      "completionCriteria": [
+        "Database schema implemented",
+        "All tables created with proper relationships",
+        "Indexes created for common queries",
+        "Migrations tested and working",
+        "Schema documentation complete"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-003",
+      "title": "Authentication & Authorization",
+      "description": "Implement secure authentication and authorization system",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-002"],
+      "completionCriteria": [
+        "User registration working",
+        "Login returns valid JWT token",
+        "Token validation middleware working",
+        "RBAC implemented for admin/user roles",
+        "All auth endpoints tested",
+        "Security best practices followed"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-004",
+      "title": "Product Catalog API",
+      "description": "Implement product catalog endpoints",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-003"],
+      "completionCriteria": [
+        "All product endpoints implemented",
+        "Search and filter working",
+        "Pagination working",
+        "Admin authorization enforced",
+        "All endpoints tested",
+        "Performance acceptable (< 200ms response time)"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-005",
+      "title": "Shopping Cart & Order API",
+      "description": "Implement shopping cart and order management endpoints",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-004"],
+      "completionCriteria": [
+        "Cart endpoints working",
+        "Order creation working",
+        "Order tracking working",
+        "Cart persists across sessions",
+        "All endpoints tested",
+        "Order validation working"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-006",
+      "title": "Payment Integration",
+      "description": "Integrate payment processor (Stripe) for order payments",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-005"],
+      "completionCriteria": [
+        "Payment processing working",
+        "Webhook handling working",
+        "Payment status tracking working",
+        "Refunds working",
+        "All payment endpoints tested",
+        "PCI compliance considerations documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-007",
+      "title": "Email Notification System",
+      "description": "Implement email notifications for orders and account events",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 4,
+      "dependencies": ["TASK-003", "TASK-005"],
+      "completionCriteria": [
+        "Email service integrated",
+        "All email templates created",
+        "Emails sending correctly",
+        "Email service tested",
+        "Configuration documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-008",
+      "title": "Backend Unit Tests",
+      "description": "Implement comprehensive unit tests for backend code",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006", "TASK-007"],
+      "completionCriteria": [
+        "All modules have unit tests",
+        "Test coverage > 80%",
+        "All tests passing",
+        "CI/CD pipeline running tests",
+        "Test results documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-009",
+      "title": "Backend Performance Optimization",
+      "description": "Optimize backend performance and scalability",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006", "TASK-007"],
+      "completionCriteria": [
+        "API response times < 200ms",
+        "Database queries optimized",
+        "Caching implemented",
+        "Load testing completed",
+        "Performance benchmarks met",
+        "Monitoring set up"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-010",
+      "title": "Backend Security Hardening",
+      "description": "Implement security best practices",
+      "assignee": "BACKEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 4,
+      "dependencies": ["TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006", "TASK-007"],
+      "completionCriteria": [
+        "Input validation implemented",
+        "SQL injection prevention verified",
+        "Security headers configured",
+        "Rate limiting working",
+        "Security audit passed",
+        "Security documentation complete"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-011",
+      "title": "Project Setup & Component Architecture",
+      "description": "Set up React project and establish component architecture",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": [],
+      "completionCriteria": [
+        "React project initialized and running",
+        "Redux store configured",
+        "Tailwind CSS working",
+        "Testing framework set up",
+        "Component structure documented",
+        "Development environment ready"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-012",
+      "title": "Layout & Navigation Components",
+      "description": "Implement main layout and navigation components",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-011"],
+      "completionCriteria": [
+        "Header component working",
+        "Navigation functional",
+        "Responsive on mobile/tablet/desktop",
+        "Routing working",
+        "All components tested",
+        "Layout consistent across pages"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-013",
+      "title": "Product Listing & Detail Pages",
+      "description": "Implement product catalog UI",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-012", "TASK-004"],
+      "completionCriteria": [
+        "Product listing page working",
+        "Product detail page working",
+        "Search and filter working",
+        "Pagination working",
+        "Images loading correctly",
+        "All components tested",
+        "Performance acceptable (< 2s load time)"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-014",
+      "title": "Shopping Cart UI",
+      "description": "Implement shopping cart interface",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-013", "TASK-005"],
+      "completionCriteria": [
+        "Cart page working",
+        "Add/remove items working",
+        "Quantity adjustment working",
+        "Cart total calculating correctly",
+        "Cart persisting across sessions",
+        "All components tested",
+        "Cart updates in real-time"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-015",
+      "title": "Checkout & Payment UI",
+      "description": "Implement checkout and payment interface",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 7,
+      "dependencies": ["TASK-014", "TASK-006"],
+      "completionCriteria": [
+        "Checkout flow working",
+        "Shipping form working",
+        "Billing form working",
+        "Payment form working",
+        "Form validation working",
+        "Order confirmation displaying",
+        "All components tested",
+        "Payment processing working"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-016",
+      "title": "User Authentication UI",
+      "description": "Implement user authentication interface",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-012", "TASK-003"],
+      "completionCriteria": [
+        "Login page working",
+        "Registration page working",
+        "Password reset flow working",
+        "Form validation working",
+        "Error messages displaying",
+        "Tokens stored securely",
+        "All components tested",
+        "Authentication flow working"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-017",
+      "title": "User Account & Profile Pages",
+      "description": "Implement user account management interface",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-016"],
+      "completionCriteria": [
+        "Profile page working",
+        "Order history displaying",
+        "Settings page working",
+        "Profile editing working",
+        "Password change working",
+        "All components tested",
+        "Data persisting correctly"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-018",
+      "title": "Frontend Unit & Component Tests",
+      "description": "Implement comprehensive frontend tests",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"],
+      "completionCriteria": [
+        "All components have tests",
+        "Redux logic tested",
+        "API integration tested",
+        "Test coverage > 80%",
+        "All tests passing",
+        "CI/CD pipeline running tests",
+        "Test results documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-019",
+      "title": "Frontend Performance Optimization",
+      "description": "Optimize frontend performance",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"],
+      "completionCriteria": [
+        "Bundle size optimized",
+        "Page load time < 2 seconds",
+        "Lighthouse score > 90",
+        "Images optimized",
+        "Caching implemented",
+        "Performance monitoring set up",
+        "Performance benchmarks met"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-020",
+      "title": "Accessibility & Cross-Browser Testing",
+      "description": "Ensure accessibility and cross-browser compatibility",
+      "assignee": "FRONTEND_DEVELOPER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 4,
+      "dependencies": ["TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"],
+      "completionCriteria": [
+        "WCAG 2.1 AA compliance",
+        "Keyboard navigation working",
+        "Screen reader compatible",
+        "Cross-browser compatible",
+        "Mobile responsive",
+        "Accessibility audit passed",
+        "Accessibility documentation complete"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-021",
+      "title": "Test Strategy & Framework Setup",
+      "description": "Develop test strategy and set up testing frameworks",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": [],
+      "completionCriteria": [
+        "Test strategy document complete",
+        "Testing frameworks configured",
+        "Test environment ready",
+        "Test data prepared",
+        "Reporting configured",
+        "Team trained on testing approach"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-022",
+      "title": "Backend API Testing",
+      "description": "Comprehensive testing of backend APIs",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-021", "TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006"],
+      "completionCriteria": [
+        "All API endpoints tested",
+        "Test coverage > 80%",
+        "All tests passing",
+        "Performance acceptable",
+        "Error handling verified",
+        "Security verified"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-023",
+      "title": "Frontend Component Testing",
+      "description": "Comprehensive testing of frontend components",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-021", "TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"],
+      "completionCriteria": [
+        "All components tested",
+        "Test coverage > 80%",
+        "All tests passing",
+        "User interactions verified",
+        "Responsive design verified",
+        "Accessibility verified"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-024",
+      "title": "End-to-End Testing",
+      "description": "Comprehensive end-to-end testing of user workflows",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-021", "TASK-008", "TASK-018"],
+      "completionCriteria": [
+        "All user workflows tested",
+        "E2E tests passing",
+        "Cross-browser compatibility verified",
+        "Mobile responsiveness verified",
+        "Performance acceptable",
+        "No critical issues"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-025",
+      "title": "Performance & Load Testing",
+      "description": "Performance and load testing of the application",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-021", "TASK-009", "TASK-019"],
+      "completionCriteria": [
+        "Load testing completed",
+        "Performance metrics documented",
+        "Bottlenecks identified",
+        "Recommendations provided",
+        "Baselines established",
+        "Performance acceptable"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-026",
+      "title": "Security Testing",
+      "description": "Security testing and vulnerability assessment",
+      "assignee": "QA_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-021", "TASK-010"],
+      "completionCriteria": [
+        "Security testing completed",
+        "Vulnerabilities identified",
+        "Security recommendations provided",
+        "No critical vulnerabilities",
+        "Security audit passed",
+        "Security documentation complete"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-027",
+      "title": "Infrastructure Design & Setup",
+      "description": "Design and set up cloud infrastructure",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": [],
+      "completionCriteria": [
+        "AWS infrastructure set up",
+        "All resources configured",
+        "Security groups configured",
+        "Networking working",
+        "Database accessible",
+        "Caching working",
+        "Infrastructure documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-028",
+      "title": "Docker & Container Setup",
+      "description": "Set up Docker containerization for application",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-027"],
+      "completionCriteria": [
+        "Dockerfiles created",
+        "Docker Compose working",
+        "Container images building",
+        "Image scanning configured",
+        "Documentation complete",
+        "Team trained on Docker"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-029",
+      "title": "CI/CD Pipeline Setup",
+      "description": "Set up continuous integration and deployment pipeline",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-028"],
+      "completionCriteria": [
+        "CI/CD pipeline working",
+        "Builds automated",
+        "Tests automated",
+        "Quality checks automated",
+        "Security scanning automated",
+        "Deployments automated",
+        "Pipeline documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-030",
+      "title": "Database Setup & Migration",
+      "description": "Set up database and implement migration strategy",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-027"],
+      "completionCriteria": [
+        "Database set up and running",
+        "Backups configured",
+        "Migrations working",
+        "Monitoring configured",
+        "Documentation complete",
+        "DR plan documented"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-031",
+      "title": "Monitoring & Logging Setup",
+      "description": "Set up comprehensive monitoring and logging",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-027"],
+      "completionCriteria": [
+        "Monitoring configured",
+        "Logging configured",
+        "Dashboards created",
+        "Alerts configured",
+        "Metrics collected",
+        "Documentation complete",
+        "Team trained on monitoring"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-032",
+      "title": "Security & Secrets Management",
+      "description": "Implement security best practices and secrets management",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-027"],
+      "completionCriteria": [
+        "Secrets management configured",
+        "SSL/TLS configured",
+        "Security groups configured",
+        "IAM roles configured",
+        "Encryption implemented",
+        "Documentation complete",
+        "Security audit passed"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-033",
+      "title": "Staging & Production Deployment",
+      "description": "Set up staging and production environments",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 6,
+      "dependencies": ["TASK-029", "TASK-030"],
+      "completionCriteria": [
+        "Staging environment working",
+        "Production environment working",
+        "Deployments automated",
+        "Blue-green deployment working",
+        "Rollback procedures documented",
+        "Team trained on deployments"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-034",
+      "title": "Performance Optimization",
+      "description": "Optimize infrastructure and application performance",
+      "assignee": "DEVOPS_ENGINEER",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 5,
+      "dependencies": ["TASK-033"],
+      "completionCriteria": [
+        "Auto-scaling configured",
+        "Caching optimized",
+        "CDN optimized",
+        "Performance metrics collected",
+        "Bottlenecks identified",
+        "Optimizations implemented",
+        "Performance benchmarks met"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-035",
+      "title": "API Documentation Setup",
+      "description": "Set up API documentation infrastructure",
+      "assignee": "DOCUMENTATION_SPECIALIST",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 4,
+      "dependencies": [],
+      "completionCriteria": [
+        "API documentation infrastructure set up",
+        "Templates created",
+        "Hosting configured",
+        "Versioning working",
+        "Search working",
+        "Guidelines documented",
+        "Team trained on documentation"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-036",
+      "title": "API Endpoint Documentation",
+      "description": "Document all API endpoints",
+      "assignee": "DOCUMENTATION_SPECIALIST",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-035", "TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006"],
+      "completionCriteria": [
+        "All API endpoints documented",
+        "Request/response schemas documented",
+        "Error codes documented",
+        "Examples provided",
+        "Client libraries documented",
+        "Documentation complete",
+        "Backend Agent has reviewed"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-037",
+      "title": "User Guide Documentation",
+      "description": "Create comprehensive user guides",
+      "assignee": "DOCUMENTATION_SPECIALIST",
+      "status": "TODO",
+      "priority": "HIGH",
+      "estimatedHours": 8,
+      "dependencies": ["TASK-035", "TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"],
+      "completionCriteria": [
+        "User guides complete",
+        "Getting started guide clear",
+        "All features documented",
+        "FAQ comprehensive",
+        "Troubleshooting guide helpful",
+        "Screenshots/videos included",
+        "Frontend Agent has reviewed"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    },
+    {
+      "id": "TASK-038",
+      "title": "Developer & Architecture Documentation",
+      "description": "Create developer guides and architecture documentation",
+      "assignee": "DOCUMENTATION_SPECIALIST",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "estimatedHours": 11,
+      "dependencies": ["TASK-035"],
+      "completionCriteria": [
+        "Developer documentation complete",
+        "Architecture documentation complete",
+        "Setup guide clear",
+        "Architecture documented",
+        "Code standards documented",
+        "Contribution guidelines clear",
+        "All agents have reviewed"
+      ],
+      "createdAt": "2026-05-26T00:00:00Z",
+      "updatedAt": "2026-05-26T00:00:00Z"
+    }
+  ],
+  "metadata": {
+    "projectName": "E-Commerce Platform",
+    "createdAt": "2026-05-26T00:00:00Z",
+    "updatedAt": "2026-05-26T00:00:00Z",
+    "totalTasks": 38,
+    "totalEstimatedHours": 200,
+    "phases": [
+      {
+        "name": "Planning & Setup",
+        "duration": "3 days",
+        "tasks": []
+      },
+      {
+        "name": "Core Development",
+        "duration": "14 days",
+        "tasks": ["TASK-001", "TASK-002", "TASK-003", "TASK-004", "TASK-005", "TASK-006", "TASK-007", "TASK-011", "TASK-012", "TASK-013", "TASK-014", "TASK-015", "TASK-016", "TASK-017"]
+      },
+      {
+        "name": "Testing & Integration",
+        "duration": "7 days",
+        "tasks": ["TASK-008", "TASK-018", "TASK-021", "TASK-022", "TASK-023", "TASK-024"]
+      },
+      {
+        "name": "Optimization & Refinement",
+        "duration": "7 days",
+        "tasks": ["TASK-009", "TASK-010", "TASK-019", "TASK-020", "TASK-025", "TASK-026", "TASK-034"]
+      },
+      {
+        "name": "Deployment & Launch",
+        "duration": "3 days",
+        "tasks": ["TASK-027", "TASK-028", "TASK-029", "TASK-030", "TASK-031", "TASK-032", "TASK-033"]
+      },
+      {
+        "name": "Post-Launch",
+        "duration": "8 days",
+        "tasks": ["TASK-035", "TASK-036", "TASK-037", "TASK-038"]
+      }
+    ]
+  }
+}
