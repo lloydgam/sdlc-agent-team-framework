@@ -117,28 +117,37 @@ START
 
 ## 🚀 Quick Start - 10 Execution Phases
 
-### Phase 0: Configure Claude Code Settings
+### Phase 0: Configure ~/.claude.json for Team Agents
 
-Before you can spawn agents, enable team agents in Claude Code:
+Before you can spawn agents, configure team agents in your `~/.claude.json` file:
 
-1. **Open Claude Code Settings**
-   - Click gear icon (⚙️) in top right
-   - Select "Settings"
+1. **Edit ~/.claude.json**
+   ```bash
+   nano ~/.claude.json
+   ```
 
-2. **Enable Team Agents**
-   - Find "Agent" or "Team Agents" section
-   - Toggle "Enable Team Agents" to ON
+2. **Add Agent Settings**
+   ```json
+   {
+     "cachedGrowthBookFeatures": {
+       "tengu_fg_left_arrow_agents": true,
+       "tengu_slim_subagent_claudemd": true
+     },
+     "agentSettings": {
+       "agent_timeout_seconds": 600,
+       "max_concurrent_agents": 5,
+       "enable_agent_logs": true,
+       "enable_team_agents": true
+     }
+   }
+   ```
 
-3. **Configure (Optional)**
-   - Set agent timeout (default: 5 minutes)
-   - Set max concurrent agents (default: 5)
-   - Enable communication logs (recommended)
+3. **Save the File**
+   - Save and close editor
+   - Changes take effect immediately
 
-4. **Save Settings**
-   - Click "Save" or "Apply"
-
-5. **Verify**
-   - Test with a simple SPAWN_AGENT command
+4. **Verify**
+   - Test with: `SPAWN_AGENT: TEST_AGENT`
    - Confirm agent responds
 
 ### Phase 1: Prepare Project Files

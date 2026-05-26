@@ -9,34 +9,71 @@
 3. **Project Context**: You should have read the project requirements and architecture
 4. **Team Configuration**: You should understand the team structure and roles
 
-### Step 0: Enable Team Agents in Claude Code
+### Step 0: Configure ~/.claude.json for Team Agents
 
-Before you can spawn agents, enable team agents:
+Before you can spawn agents, configure team agents in your `~/.claude.json` file:
 
-1. **Open Claude Code Settings**
-   - Click gear icon (⚙️) in top right
-   - Select "Settings"
+1. **Open ~/.claude.json**
+   ```bash
+   # Edit with your preferred editor
+   nano ~/.claude.json
+   vim ~/.claude.json
+   code ~/.claude.json
+   ```
 
-2. **Find Agent Settings**
-   - Look for "Agent" or "Team Agents" section
-   - Find "Enable Team Agents" option
+2. **Add Agent Configuration**
+   
+   Ensure these settings are present in your `~/.claude.json`:
+   
+   ```json
+   {
+     "cachedGrowthBookFeatures": {
+       "tengu_fg_left_arrow_agents": true,
+       "tengu_slim_subagent_claudemd": true
+     },
+     "agentSettings": {
+       "agent_timeout_seconds": 600,
+       "max_concurrent_agents": 5,
+       "enable_agent_logs": true,
+       "enable_team_agents": true
+     }
+   }
+   ```
 
-3. **Enable Team Agents**
-   - Toggle "Enable Team Agents" to ON
-   - This allows you to spawn multiple agents
+3. **Configuration Details**
+   
+   | Setting | Value | Purpose |
+   |---------|-------|---------|
+   | `tengu_fg_left_arrow_agents` | `true` | Enable agent UI features |
+   | `tengu_slim_subagent_claudemd` | `true` | Enable subagent spawning |
+   | `agent_timeout_seconds` | `600` | Agent timeout (10 minutes) |
+   | `max_concurrent_agents` | `5` | Max simultaneous agents |
+   | `enable_agent_logs` | `true` | Enable communication logs |
+   | `enable_team_agents` | `true` | Enable team agents |
 
-4. **Configure (Optional)**
-   - Set agent timeout (default: 5 minutes)
-   - Set max concurrent agents (default: 5)
-   - Enable communication logs (recommended: ON)
+4. **Save the File**
+   - Save and close editor
+   - Changes take effect immediately
 
-5. **Save Settings**
-   - Click "Save" or "Apply"
-   - Verify settings are saved
+5. **Verify Configuration**
+   ```bash
+   # Validate JSON syntax
+   jq . ~/.claude.json > /dev/null && echo "Valid" || echo "Invalid"
+   ```
 
-6. **Verify Team Agents Work**
-   - Test with: `SPAWN_AGENT: TEST_AGENT`
-   - Confirm agent responds
+6. **Test Team Agents**
+   ```
+   SPAWN_AGENT: TEST_AGENT
+   
+   Context:
+   - This is a test to verify team agents are enabled
+   
+   Instructions:
+   1. Confirm you are a spawned agent
+   2. Report success
+   ```
+   
+   If the agent responds, team agents are enabled! ✅
 
 ### Step 1: Prepare Project Context
 

@@ -20,34 +20,57 @@ Before executing, make sure you have:
 
 ---
 
-## ⚙️ Step 0: Configure Claude Code Team Agents Settings
+## ⚙️ Step 0: Configure ~/.claude.json for Team Agents
 
-Before you can spawn agents, you need to enable team agents in Claude Code settings.
+Before you can spawn agents, you need to configure team agents in your `~/.claude.json` file.
 
-### Enable Team Agents in Claude Code
+### Enable Team Agents in ~/.claude.json
 
-**In Claude Code:**
+**Edit your `~/.claude.json` file:**
 
-1. **Open Settings**
-   - Click the gear icon (⚙️) in the top right
-   - Select "Settings"
+1. **Open the file**
+   ```bash
+   # On macOS/Linux
+   nano ~/.claude.json
+   
+   # Or use your preferred editor
+   vim ~/.claude.json
+   code ~/.claude.json
+   ```
 
-2. **Navigate to Agent Settings**
-   - Look for "Agent" or "Team Agents" section
-   - Find "Enable Team Agents" option
+2. **Add or update agent settings**
+   
+   Find the section with agent configuration and ensure these settings are present:
+   
+   ```json
+   {
+     "cachedGrowthBookFeatures": {
+       "tengu_fg_left_arrow_agents": true,
+       "tengu_slim_subagent_claudemd": true
+     },
+     "agentSettings": {
+       "agent_timeout_seconds": 600,
+       "max_concurrent_agents": 5,
+       "enable_agent_logs": true,
+       "enable_team_agents": true
+     }
+   }
+   ```
 
-3. **Enable Team Agents**
-   - Toggle "Enable Team Agents" to ON
-   - This allows you to spawn multiple agents
+3. **Key Settings Explained**
 
-4. **Configure Agent Settings** (Optional)
-   - Set agent timeout (default: 5 minutes)
-   - Set max concurrent agents (default: 5)
-   - Enable agent communication logs (recommended: ON)
+   | Setting | Value | Purpose |
+   |---------|-------|---------|
+   | `tengu_fg_left_arrow_agents` | `true` | Enable agent UI features |
+   | `tengu_slim_subagent_claudemd` | `true` | Enable subagent spawning |
+   | `agent_timeout_seconds` | `600` | Agent timeout in seconds (10 minutes) |
+   | `max_concurrent_agents` | `5` | Maximum agents running simultaneously |
+   | `enable_agent_logs` | `true` | Enable agent communication logs |
+   | `enable_team_agents` | `true` | Enable team agents feature |
 
-5. **Save Settings**
-   - Click "Save" or "Apply"
-   - Verify settings are saved
+4. **Save the file**
+   - Save and close the editor
+   - No restart needed - changes take effect immediately
 
 ### Verify Team Agents are Enabled
 
@@ -68,19 +91,33 @@ If you see the agent respond, team agents are enabled! ✅
 
 ### Troubleshooting
 
-**If team agents won't enable:**
-- [ ] Check Claude Code version (must be latest)
-- [ ] Restart Claude Code
-- [ ] Check internet connection
-- [ ] Clear browser cache
-- [ ] Try incognito/private mode
-
 **If agents won't spawn:**
-- [ ] Verify team agents are enabled in settings
-- [ ] Check agent syntax (SPAWN_AGENT: AGENT_NAME)
+- [ ] Verify `~/.claude.json` has correct settings
+- [ ] Check JSON syntax is valid (use `jq . ~/.claude.json` to validate)
+- [ ] Ensure `tengu_fg_left_arrow_agents` is `true`
+- [ ] Ensure `tengu_slim_subagent_claudemd` is `true`
 - [ ] Verify agent files exist in agents/ folder
 - [ ] Check for typos in agent names
 - [ ] Review error messages in console
+
+**Validate JSON syntax:**
+```bash
+# Check if JSON is valid
+jq . ~/.claude.json > /dev/null && echo "Valid JSON" || echo "Invalid JSON"
+```
+
+**Reset to defaults:**
+If you have issues, you can reset agent settings:
+```bash
+# Backup current file
+cp ~/.claude.json ~/.claude.json.backup
+
+# Then edit and restore defaults
+# agent_timeout_seconds: 600
+# max_concurrent_agents: 5
+# enable_agent_logs: true
+# enable_team_agents: true
+```
 
 ---
 
