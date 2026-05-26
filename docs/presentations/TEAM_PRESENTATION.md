@@ -49,7 +49,7 @@ Shared Task List
 
 ---
 
-## Slide 4: How It Works (3 min)
+## Slide 4: How It Works
 
 **Phase 1: Analysis**
 - Team Lead analyzes requirements
@@ -57,19 +57,19 @@ Shared Task List
 - Team Lead identifies dependencies
 
 **Phase 2: Spawning**
-- Team Lead spawns 5 specialized agents
+- Team Lead spawns specialized agents (5 for new projects, subset for existing)
 - Each agent reviews their role
 - Each agent claims tasks
 
 **Phase 3: Execution**
 - Agents work in parallel
-- Agents update progress every 2 hours
+- Agents update progress regularly
 - Agents report blockers immediately
 
 **Phase 4: Monitoring**
-- Team Lead monitors every 4 hours
+- Team Lead monitors progress
 - Team Lead resolves blockers
-- Team Lead adjusts timeline
+- Team Lead adjusts timeline as needed
 
 ---
 
@@ -142,27 +142,26 @@ Shared Task List
 
 ---
 
-## Slide 8: Real Example - E-Commerce (3 min)
+## Slide 8: Real Example - E-Commerce Platform
 
 **Project**: E-Commerce Platform
-**Timeline**: 6 weeks
 **Team**: 5 agents
 **Tasks**: 38 total
 
 **Breakdown**:
-- Backend: 10 tasks (58 hours)
-- Frontend: 10 tasks (46 hours)
-- QA: 10 tasks (52 hours)
-- DevOps: 10 tasks (44 hours)
-- Docs: 10 tasks (44 hours)
+- Backend: 10 tasks (APIs, databases, business logic)
+- Frontend: 10 tasks (UI/UX, components, styling)
+- QA: 10 tasks (testing, validation)
+- DevOps: 10 tasks (infrastructure, deployment)
+- Docs: 10 tasks (documentation, guides)
 
-**Execution**:
-- Days 1-3: Planning & setup
-- Days 4-17: Core development (parallel)
-- Days 18-24: Testing & integration
-- Days 25-31: Optimization
-- Days 32-34: Deployment
-- Days 35-42: Post-launch
+**Execution Phases**:
+- Phase 1: Planning & setup
+- Phase 2: Core development (parallel)
+- Phase 3: Testing & integration
+- Phase 4: Optimization
+- Phase 5: Deployment
+- Phase 6: Post-launch
 
 **Result**: Coordinated parallel development!
 
@@ -190,29 +189,31 @@ Shared Task List
 
 ---
 
-## Slide 10: Getting Started (3 min)
+## Slide 10: Getting Started
 
-**Step 1: Prepare (30 min)**
-- Create PROJECT_BRIEF.md
-- Create REQUIREMENTS.md
-- Create TASK_LIST.json
+**For New Projects**:
+1. Create PROJECT_BRIEF.md
+2. Create REQUIREMENTS.md
+3. Create TASK_LIST.md (using simple format)
+4. Spawn Team Lead
+5. Spawn all 5 agents
+6. Monitor progress
 
-**Step 2: Spawn Team Lead (5 min)**
+**For Existing Projects** (Adding Features/Fixing Bugs):
+1. Create FEATURE_REQUEST.md or BUG_REPORT.md
+2. Create TASK_LIST.md with specific work
+3. Spawn Team Lead
+4. Spawn only needed agents (2-4 instead of 5)
+5. Monitor progress
+
+**One-Command Execution**:
 ```
 SPAWN_AGENT: TEAM_LEAD
+[Team Lead automatically spawns all needed agents]
 ```
 
-**Step 3: Spawn Agents (5 min)**
-```
-SPAWN_AGENT: BACKEND_DEVELOPER
-SPAWN_AGENT: FRONTEND_DEVELOPER
-SPAWN_AGENT: QA_ENGINEER
-SPAWN_AGENT: DEVOPS_ENGINEER
-SPAWN_AGENT: DOCUMENTATION_SPECIALIST
-```
-
-**Step 4: Monitor (Ongoing)**
-- Check task list every 4 hours
+**Monitor**:
+- Check task list regularly
 - Resolve blockers
 - Track progress
 
@@ -241,25 +242,31 @@ SPAWN_AGENT: DOCUMENTATION_SPECIALIST
 
 ---
 
-## Slide 12: Use Cases (2 min)
+## Slide 12: Use Cases
 
 **New Projects**:
 - Define requirements
 - Decompose tasks
-- Spawn agents
+- Spawn all 5 agents
 - Execute in parallel
 
-**Existing Projects**:
-- Document current state
-- Define remaining work
-- Spawn agents
-- Complete remaining tasks
+**Existing Projects - New Features**:
+- Document feature request
+- Decompose into tasks
+- Spawn Backend + Frontend + QA + Docs
+- Execute feature development
 
-**Maintenance**:
+**Existing Projects - Bug Fixes**:
+- Document bug report
+- Decompose into tasks
+- Spawn Backend/Frontend + QA
+- Execute fix and verification
+
+**Maintenance & Improvements**:
 - Create task list
-- Spawn agents
-- Execute maintenance
-- Track improvements
+- Spawn needed agents
+- Execute improvements
+- Track progress
 
 **Any project** can benefit!
 
@@ -310,22 +317,26 @@ A: Check metrics: velocity, progress, blockers, timeline
 
 ---
 
-## Slide 15: Next Steps (1 min)
+## Slide 15: Next Steps
 
 **Today**:
-1. Read QUICK_START.md (5 min)
-2. Read DEMO_GUIDE.md (30 min)
+1. Review framework overview
+2. Read QUICK_START.md
+3. Review DEMO_GUIDE.md
 
 **This Week**:
 1. Prepare your project files
-2. Spawn Team Lead
-3. Spawn agents
-4. Start executing
+2. Copy framework files to your project
+3. Spawn Team Lead
+4. Spawn agents
+5. Start executing
 
-**This Month**:
-1. Complete your project
-2. Document lessons learned
-3. Iterate and improve
+**Ongoing**:
+1. Monitor progress
+2. Resolve blockers
+3. Complete your project
+4. Document lessons learned
+5. Iterate and improve
 
 ---
 
@@ -361,21 +372,24 @@ A: Check metrics: velocity, progress, blockers, timeline
 
 ### Before the Presentation
 - [ ] Review all slides
-- [ ] Practice timing (30 minutes)
 - [ ] Have documentation ready
 - [ ] Prepare demo project files
 - [ ] Test agent spawning
+- [ ] Have README.md and EXECUTE_PROJECT.md ready to share
 
 ### During the Presentation
 - [ ] Show the architecture diagram
 - [ ] Walk through the example
-- [ ] Demonstrate task list
+- [ ] Demonstrate task list format
 - [ ] Show communication flow
+- [ ] Explain one-command execution
+- [ ] Show how to use for existing projects
 - [ ] Answer questions
 
 ### After the Presentation
 - [ ] Share documentation links
 - [ ] Provide sample project files
+- [ ] Share EXECUTE_PROJECT.md guide
 - [ ] Offer to help with setup
 - [ ] Schedule follow-up session
 - [ ] Gather feedback
