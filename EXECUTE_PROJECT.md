@@ -215,6 +215,148 @@ cat shared/task-list.json | jq '.tasks | length as $total | map(select(.status =
 
 ---
 
+## 🔄 For Existing Projects: Adding Features or Fixing Bugs
+
+If you have an existing project and want to add new features or fix bugs, use this streamlined approach:
+
+### Quick Setup for Existing Projects
+
+**Step 1: Document the Work**
+```markdown
+# FEATURE_REQUEST.md or BUG_REPORT.md
+
+## What needs to be done?
+- Feature description or bug details
+- Requirements and acceptance criteria
+- Affected components (backend, frontend, etc.)
+```
+
+**Step 2: Create Task List**
+Use TASK_LIST_TEMPLATE.md format to break work into specific tasks:
+```markdown
+### TASK-101: Feature/Bug Task Title
+- **Assigned To:** Backend Developer (or appropriate agent)
+- **Status:** TODO
+- **Priority:** HIGH
+- **Depends On:** None
+- **Description:** What needs to be done
+- **Completion Criteria:**
+  - Criterion 1
+  - Criterion 2
+```
+
+**Step 3: Spawn Team Lead for Existing Project**
+```
+SPAWN_AGENT: TEAM_LEAD
+
+Context:
+- Review existing project documentation
+- Read FEATURE_REQUEST.md or BUG_REPORT.md
+- Review TASK_LIST.md with specific work items
+- Use agents/agent-framework.js
+
+Instructions:
+1. Analyze the feature request or bug report
+2. Decompose into specific tasks
+3. Identify which agents are needed
+4. Update shared/task-list.json
+5. Spawn only the agents needed for this work
+```
+
+**Step 4: Spawn Only Needed Agents**
+
+For **Bug Fixes** (typically 2-3 agents):
+```
+SPAWN_AGENT: BACKEND_DEVELOPER      (if backend bug)
+SPAWN_AGENT: FRONTEND_DEVELOPER     (if frontend bug)
+SPAWN_AGENT: QA_ENGINEER            (to verify fix)
+```
+
+For **New Features** (typically 3-4 agents):
+```
+SPAWN_AGENT: BACKEND_DEVELOPER      (if backend work)
+SPAWN_AGENT: FRONTEND_DEVELOPER     (if frontend work)
+SPAWN_AGENT: QA_ENGINEER            (to test feature)
+SPAWN_AGENT: DOCUMENTATION_SPECIALIST (to document)
+```
+
+For **Infrastructure Changes** (typically 2 agents):
+```
+SPAWN_AGENT: DEVOPS_ENGINEER        (infrastructure)
+SPAWN_AGENT: QA_ENGINEER            (to verify)
+```
+
+### Example: Adding Payment Processing
+
+**FEATURE_REQUEST.md:**
+```markdown
+# Feature: Payment Processing
+
+## Description
+Add payment processing to the e-commerce platform
+
+## Requirements
+- Support credit card payments
+- Integrate with Stripe API
+- Handle payment validation
+- Store transaction history
+
+## Scope
+- Backend: Payment API endpoints
+- Frontend: Payment form UI
+- QA: Payment flow testing
+- Docs: Payment API documentation
+```
+
+**TASK_LIST.md:**
+```markdown
+### TASK-101: Payment API Design
+- **Assigned To:** Backend Developer
+- **Status:** TODO
+- **Priority:** HIGH
+- **Depends On:** None
+- **Description:** Design payment API endpoints and Stripe integration
+- **Completion Criteria:**
+  - API endpoints defined
+  - Stripe integration planned
+  - Error handling documented
+
+### TASK-102: Payment Form UI
+- **Assigned To:** Frontend Developer
+- **Status:** TODO
+- **Priority:** HIGH
+- **Depends On:** TASK-101
+- **Description:** Build payment form component
+- **Completion Criteria:**
+  - Form component created
+  - Validation implemented
+  - Styling complete
+
+### TASK-103: Payment Testing
+- **Assigned To:** QA Engineer
+- **Status:** TODO
+- **Priority:** HIGH
+- **Depends On:** TASK-101, TASK-102
+- **Description:** Test payment flow end-to-end
+- **Completion Criteria:**
+  - Test cases written
+  - All tests passing
+  - Edge cases covered
+```
+
+**Then spawn:**
+```
+SPAWN_AGENT: TEAM_LEAD
+[context about payment feature]
+
+SPAWN_AGENT: BACKEND_DEVELOPER
+SPAWN_AGENT: FRONTEND_DEVELOPER
+SPAWN_AGENT: QA_ENGINEER
+SPAWN_AGENT: DOCUMENTATION_SPECIALIST
+```
+
+---
+
 ## 🔄 Daily Execution Cycle
 
 ### Morning
