@@ -76,7 +76,18 @@ node -e "const AF=require('./agents/agent-framework.js'); const f=new AF('.'); c
 Claude Code config lives in two places: **`.mcp.json`** (project root — required there; Claude Code only auto-discovers project MCP servers from the root, so do not move it) and **`.claude/settings.json`** (project settings checked into the repo). `.claude/settings.json` pre-enables the Context7 server (`enabledMcpjsonServers`) so anyone who clones the repo gets it without an approval prompt.
 
 - **Context7** (MCP server, `.mcp.json`, project scope) — provides up-to-date, version-specific documentation for libraries and frameworks. **Always consult Context7 before referencing or generating code against any technology in a project's stack** (e.g. React, Redux, Tailwind, Jest, Stripe, Express, AWS SDKs). Resolve the library first, then fetch its docs, rather than relying on memory — the agents in this framework build real apps and the stack versions change. This matters most for the Backend, Frontend, DevOps, and Documentation agents when implementing or documenting against a named dependency.
-- **Superpowers** (plugin, `obra/superpowers-marketplace`, user scope) — a skills/workflow plugin (by Jesse Vincent) installed globally for this user, not committed to the repo. Its skills and commands load automatically; reach for them when a task matches a Superpowers skill. Since it's user-scoped, teammates who clone this repo won't have it unless they install it themselves (`claude plugin marketplace add obra/superpowers-marketplace && claude plugin install superpowers@superpowers-marketplace`).
+- **Superpowers** (plugin, `obra/superpowers-marketplace`, user scope) — a skills/workflow plugin (by Jesse Vincent) installed globally for this user, not committed to the repo. Since it's user-scoped, teammates who clone this repo won't have it unless they install it themselves (`claude plugin marketplace add obra/superpowers-marketplace && claude plugin install superpowers@superpowers-marketplace`). It is optional — the repo does not depend on it. See the reconciliation rules below before using it here.
+
+### Superpowers vs. this framework — precedence
+
+Superpowers ships skills (`brainstorming`, `writing-plans`, `executing-plans`, `subagent-driven-development`, `dispatching-parallel-agents`) that overlap with what this repo already defines. In this repository, **the framework is the source of truth** — do not let Superpowers' planning/orchestration skills displace it:
+
+- **Task tracking & orchestration → use the framework, not Superpowers.** The authoritative plan is `shared/task-list.json` driven through `AgentFramework` (`agents/agent-framework.js`); the authoritative roles are `agents/*.md`. Do **not** substitute Superpowers' `writing-plans`/`executing-plans` markdown plans or its sub-agent skills for this — they would create a competing, untracked system of record.
+- **Design docs → keep the framework's conventions.** Prefer `PROJECT_BRIEF.md` / `REQUIREMENTS.md` and the `docs/` layout over Superpowers' `docs/superpowers/specs/` location, so artifacts stay where this framework expects them.
+- **What Superpowers *is* good for here:** the engineering-discipline skills that the framework doesn't provide — `test-driven-development`, `systematic-debugging`, `requesting-code-review` / `receiving-code-review`, `verification-before-completion`, `using-git-worktrees`. Use these freely *inside* a task that the framework has already assigned.
+- **Don't gate framework work behind the `brainstorming` skill.** This repo's planning happens via the Team Lead → task-list flow; a separate brainstorm-and-approve gate is redundant and conflicts with that model.
+
+Rule of thumb: **the framework decides *what* work happens and *who* owns it; Superpowers skills can help with *how* a given task is executed** (testing, debugging, review). When they conflict, the framework wins.
 
 ## Conventions
 
