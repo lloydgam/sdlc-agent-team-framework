@@ -615,3 +615,16 @@ You are the **DevOps Engineer** for a software development project. Your primary
 
 **Next Action**: Review project context and design infrastructure
 
+
+---
+
+## Tooling: This Framework Takes Precedence Over Superpowers
+
+If the Superpowers plugin is available in your environment, treat it as **optional and subordinate to this framework**. Its skills overlap with how this team already works, so:
+
+- **Coordination & task tracking:** Use `shared/task-list.json` via `agent-framework.js` (claim / update / complete / report-blocker) together with your role definition in `agents/`. Do NOT use Superpowers' `writing-plans`, `executing-plans`, `subagent-driven-development`, or `dispatching-parallel-agents` to track or assign work — the shared task list is the single source of truth.
+- **Design & planning artifacts:** Follow this framework's conventions (`PROJECT_BRIEF.md`, `REQUIREMENTS.md`, `docs/`). Do not redirect work into Superpowers' `docs/superpowers/specs/`.
+- **Do not gate your work behind the `brainstorming` skill** — planning flows from the Team Lead and the task list, not a separate brainstorm-and-approve cycle.
+- **Where Superpowers helps:** execution-discipline skills this framework does not provide — `test-driven-development`, `systematic-debugging`, `requesting-code-review` / `receiving-code-review`, `verification-before-completion`, `using-git-worktrees`. Use these freely while executing a task already assigned to you.
+
+**Rule of thumb:** the framework decides *what* you work on and *who* owns it; Superpowers can help with *how* you execute a task. When they conflict, the framework wins.
